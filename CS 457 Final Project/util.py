@@ -3,9 +3,11 @@ import torch
 from datasets import Dataset
 from torch.utils.data import DataLoader
 from transformers import AutoTokenizer
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
 from general_bert_model import BertConversationalLanguageClassificationModel
+
+label_map = {"es": 0, "ita":1, "fr":2}
 
 
 def model_accuracy(model: BertConversationalLanguageClassificationModel, dataloader: DataLoader, device: str):
@@ -21,6 +23,12 @@ def model_accuracy(model: BertConversationalLanguageClassificationModel, dataloa
     """
     all_preds, all_labels = [], []
     model.eval()
+
+
+    id_to_label = {v: k for k, v in label_map.items()}
+    label_ids = list(id_to_label.keys())
+    label_names = [id_to_label[i] for i in label_ids]
+
     with torch.no_grad():
         correct = 0
         total = 0
@@ -35,16 +43,19 @@ def model_accuracy(model: BertConversationalLanguageClassificationModel, dataloa
 
             total += true_labels.size(0)
 
-            all_preds .extend(pred_labels.cpu().tolist())
+            all_preds.extend(pred_labels.cpu().tolist())
             all_labels.extend(true_labels.cpu().tolist())
 
-        print(confusion_matrix(all_labels, all_preds))
+        cm = confusion_matrix(all_labels, all_preds, labels=label_ids)
+        disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=label_names)
+        disp.plot(cmap='Blues', xticks_rotation=45)
+        
 
         acc = correct / total
         return acc
 
 
-def get_dataloader(data_split: str, data_path: str = None, batch_size: int = 4, weights="bert-base-uncased"):
+def get_dataloader(data_split: str, data_path: str = None, batch_size: int = 4, weights="bert-base-uncased", sample = None):
     """
     Get a pytorch dataloader for a specific data split
 
@@ -58,8 +69,6 @@ def get_dataloader(data_split: str, data_path: str = None, batch_size: int = 4, 
     """
 
     assert data_split in ["train", "dev", "test"]
-
-    label_map = {"es": 0, "ita":1, "fr":2}
 
     if data_path is None:
         data = pd.read_csv(f"/home/jgilyard/CS 457 Final Project/{data_split}.tsv", sep="\t", names= ["Sentence", "Language"])
@@ -76,6 +85,9 @@ def get_dataloader(data_split: str, data_path: str = None, batch_size: int = 4, 
 
     dataset = Dataset.from_pandas(data)
     tokenizer = AutoTokenizer.from_pretrained(weights)
+
+    if sample is not None: 
+        dataset = dataset.select(range(sample))
 
     dataset = dataset.map(lambda ex: tokenizer(ex["Sentence"], truncation=True, padding="max_length"), batched=True)
     dataset.set_format(type="torch", columns=["input_ids","attention_mask","Lang_int"])

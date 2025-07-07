@@ -13,7 +13,8 @@
 # print SLURM envirionment variables
 echo "Job ID: ${SLURM_JOB_ID}"
 echo "Node: ${SLURMD_NODENAME}" echo "Starting: "`date +"%D %T"` 
+
 # Your calculations here 
-python Final_Train.py --weights bert-base-multilingual-cased --filename trained_bert_weights.pth
+python train.py --weights bert-base-multilingual-cased --filename trained_bert_weights.pth
 # End of job info 
 echo "Ending: "`date +"%D %T"`
