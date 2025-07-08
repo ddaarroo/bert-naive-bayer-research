@@ -70,10 +70,10 @@ def get_dataloader(data_split: str, data_path: str = None, batch_size: int = 4, 
         DataLoader: the pytorch dataloader object
     """
 
-    #assert data_split in ["train", "dev", "test"]
+    assert data_split in ["train_clean", "dev_clean", "test_clean"]
 
     if data_path is None:
-        data = pd.read_csv(f"/home/jgilyard/CS 457 Final Project/{data_split}.tsv", sep="\t", names= ["Sentence", "Language"])
+        data = pd.read_csv(f"/home/jgilyard/BERTNaive Bayes/bert-naive-bayer-research/CS 457 Final Project/{data_split}.tsv", sep="\t", names= ["Sentence", "Language"])
 
     else:
         data = pd.read_csv(data_path, sep="\t", names=["Sentence", "Language"])

@@ -83,8 +83,8 @@ def main():
                         help="The batch size")
     parser.add_argument("--weights", default= "bert-base-multilingual-cased", type= str, 
                         help="The weight of a given model")
-    parser.add_argument("--filename", default='model_weights.pth', type=str, 
-                        help="The name of the file path")
+  #  parser.add_argument("--filename", default='model_weights.pth', type=str, 
+                        #help="The name of the file path")
     args = parser.parse_args()
 
     # initialize model and dataloaders
@@ -94,9 +94,9 @@ def main():
     #manual_seed(457)
 
     model = BertConversationalLanguageClassificationModel(args.weights).to(device)
-    train_dataloader = get_dataloader("train", batch_size=args.batch_size, sample=10)
-    dev_dataloader = get_dataloader("dev", batch_size=args.batch_size, sample=10);
-    test_dataloader = get_dataloader('test',  batch_size=args.batch_size, sample=10)
+    train_dataloader = get_dataloader("train_clean", batch_size=args.batch_size, sample=100)
+    dev_dataloader = get_dataloader("dev_clean", batch_size=args.batch_size, sample=100);
+    test_dataloader = get_dataloader('test_clean',  batch_size=args.batch_size, sample=100)
 
     train_model(model, train_dataloader, dev_dataloader, test_dataloader,
                 args.epochs, args.learning_rate)
