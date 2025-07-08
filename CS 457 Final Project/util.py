@@ -4,6 +4,7 @@ from datasets import Dataset
 from torch.utils.data import DataLoader
 from transformers import AutoTokenizer
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+import matplotlib.pyplot as plt
 
 from general_bert_model import BertConversationalLanguageClassificationModel
 
@@ -49,6 +50,7 @@ def model_accuracy(model: BertConversationalLanguageClassificationModel, dataloa
         cm = confusion_matrix(all_labels, all_preds, labels=label_ids)
         disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=label_names)
         disp.plot(cmap='Blues', xticks_rotation=45)
+        plt.close()
         
 
         acc = correct / total
@@ -68,7 +70,7 @@ def get_dataloader(data_split: str, data_path: str = None, batch_size: int = 4, 
         DataLoader: the pytorch dataloader object
     """
 
-    assert data_split in ["train", "dev", "test"]
+    #assert data_split in ["train", "dev", "test"]
 
     if data_path is None:
         data = pd.read_csv(f"/home/jgilyard/CS 457 Final Project/{data_split}.tsv", sep="\t", names= ["Sentence", "Language"])

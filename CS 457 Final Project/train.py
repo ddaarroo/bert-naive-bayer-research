@@ -68,7 +68,7 @@ def train_model(model: BertConversationalLanguageClassificationModel, train_data
             train  = model_accuracy(model, train_dataloader, device)
             test = model_accuracy(model,test_dataloader, device)
             avg_loss = total_loss/total
-            print(f"Epoch {epoch+1}/{epoch} | Avg loss: {avg_loss:.4f} | Train Accuracy: {train:.4f} | Dev Accuracy: {dev:.4f} | Test Accuracy: {test:.4f}")
+        print(f"Epoch {epoch}/{epochs} | Avg loss: {avg_loss:.4f} | Train Accuracy: {train:.4f} | Dev Accuracy: {dev:.4f} | Test Accuracy: {test:.4f}")
     return model_accuracy(model, dev_dataloader, device)
 
 
@@ -94,9 +94,9 @@ def main():
     #manual_seed(457)
 
     model = BertConversationalLanguageClassificationModel(args.weights).to(device)
-    train_dataloader = get_dataloader("train", batch_size=args.batch_size, sample=1000)
-    dev_dataloader = get_dataloader("dev", batch_size=args.batch_size, sample=1000);
-    test_dataloader = get_dataloader('test',  batch_size=args.batch_size, sample=1000)
+    train_dataloader = get_dataloader("train", batch_size=args.batch_size, sample=10)
+    dev_dataloader = get_dataloader("dev", batch_size=args.batch_size, sample=10);
+    test_dataloader = get_dataloader('test',  batch_size=args.batch_size, sample=10)
 
     train_model(model, train_dataloader, dev_dataloader, test_dataloader,
                 args.epochs, args.learning_rate)
