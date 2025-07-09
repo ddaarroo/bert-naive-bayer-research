@@ -1,0 +1,49 @@
+Job ID: 14483
+Node: node002 echo Starting: 07/08/25 16:07:45
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-multilingual-cased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Map:   0%|                                                                                           | 0/5000 [00:00<?, ? examples/s]Map:  20%|███████████████▌                                                              | 1000/5000 [00:00<00:01, 2837.14 examples/s]Map:  40%|███████████████████████████████▏                                              | 2000/5000 [00:00<00:01, 2977.43 examples/s]Map:  60%|██████████████████████████████████████████████▊                               | 3000/5000 [00:00<00:00, 3037.89 examples/s]Map:  80%|██████████████████████████████████████████████████████████████▍               | 4000/5000 [00:01<00:00, 3083.91 examples/s]Map: 100%|██████████████████████████████████████████████████████████████████████████████| 5000/5000 [00:01<00:00, 3104.91 examples/s]Map: 100%|██████████████████████████████████████████████████████████████████████████████| 5000/5000 [00:01<00:00, 3048.87 examples/s]
+Map:   0%|                                                                                           | 0/5000 [00:00<?, ? examples/s]Map:  20%|███████████████▌                                                              | 1000/5000 [00:00<00:01, 3172.31 examples/s]Map:  40%|███████████████████████████████▏                                              | 2000/5000 [00:00<00:00, 3098.41 examples/s]Map:  60%|██████████████████████████████████████████████▊                               | 3000/5000 [00:01<00:00, 2511.15 examples/s]Map:  80%|██████████████████████████████████████████████████████████████▍               | 4000/5000 [00:01<00:00, 2735.88 examples/s]Map: 100%|██████████████████████████████████████████████████████████████████████████████| 5000/5000 [00:01<00:00, 2874.06 examples/s]Map: 100%|██████████████████████████████████████████████████████████████████████████████| 5000/5000 [00:01<00:00, 2823.29 examples/s]
+Map:   0%|                                                                                           | 0/5000 [00:00<?, ? examples/s]Map:  20%|███████████████▌                                                              | 1000/5000 [00:00<00:01, 3246.12 examples/s]Map:  40%|███████████████████████████████▏                                              | 2000/5000 [00:00<00:00, 3158.69 examples/s]Map:  60%|██████████████████████████████████████████████▊                               | 3000/5000 [00:00<00:00, 3162.89 examples/s]Map:  80%|██████████████████████████████████████████████████████████████▍               | 4000/5000 [00:01<00:00, 3158.75 examples/s]Map: 100%|██████████████████████████████████████████████████████████████████████████████| 5000/5000 [00:01<00:00, 3145.55 examples/s]Map: 100%|██████████████████████████████████████████████████████████████████████████████| 5000/5000 [00:01<00:00, 3142.06 examples/s]
+Epoch Loop:   0%|                                                                                             | 0/20 [00:00<?, ?it/s]Sucessful epoch: 0 20
+Epoch 0/20 | Avg loss: 0.7492 | Train Accuracy: 0.8788 | Dev Accuracy: 0.8476 | Test Accuracy: 0.8466
+Epoch Loop:   5%|████                                                                              | 1/20 [04:19<1:22:13, 259.65s/it]Sucessful epoch: 1 20
+Epoch 1/20 | Avg loss: 0.2935 | Train Accuracy: 0.9548 | Dev Accuracy: 0.8972 | Test Accuracy: 0.8886
+Epoch Loop:  10%|████████▏                                                                         | 2/20 [08:42<1:18:30, 261.71s/it]Sucessful epoch: 2 20
+Epoch 2/20 | Avg loss: 0.1876 | Train Accuracy: 0.9762 | Dev Accuracy: 0.9100 | Test Accuracy: 0.9090
+Epoch Loop:  15%|████████████▎                                                                     | 3/20 [13:05<1:14:18, 262.27s/it]Sucessful epoch: 3 20
+Epoch 3/20 | Avg loss: 0.1269 | Train Accuracy: 0.9900 | Dev Accuracy: 0.9158 | Test Accuracy: 0.9108
+Epoch Loop:  20%|████████████████▍                                                                 | 4/20 [17:28<1:10:00, 262.53s/it]Sucessful epoch: 4 20
+Epoch 4/20 | Avg loss: 0.0904 | Train Accuracy: 0.9932 | Dev Accuracy: 0.9206 | Test Accuracy: 0.9184
+Epoch Loop:  25%|████████████████████▌                                                             | 5/20 [21:51<1:05:40, 262.70s/it]Sucessful epoch: 5 20
+Epoch 5/20 | Avg loss: 0.0685 | Train Accuracy: 0.9946 | Dev Accuracy: 0.9158 | Test Accuracy: 0.9154
+Epoch Loop:  30%|████████████████████████▌                                                         | 6/20 [26:14<1:01:20, 262.87s/it]Sucessful epoch: 6 20
+Epoch 6/20 | Avg loss: 0.0521 | Train Accuracy: 0.9968 | Dev Accuracy: 0.9178 | Test Accuracy: 0.9206
+Epoch Loop:  35%|█████████████████████████████▍                                                      | 7/20 [30:37<56:57, 262.89s/it]Sucessful epoch: 7 20
+Epoch 7/20 | Avg loss: 0.0655 | Train Accuracy: 0.9956 | Dev Accuracy: 0.9218 | Test Accuracy: 0.9180
+Epoch Loop:  40%|█████████████████████████████████▌                                                  | 8/20 [35:00<52:35, 262.94s/it]Sucessful epoch: 8 20
+Epoch 8/20 | Avg loss: 0.0397 | Train Accuracy: 0.9964 | Dev Accuracy: 0.9188 | Test Accuracy: 0.9118
+Epoch Loop:  45%|█████████████████████████████████████▊                                              | 9/20 [39:49<49:41, 271.06s/it]Sucessful epoch: 9 20
+Epoch 9/20 | Avg loss: 0.0339 | Train Accuracy: 0.9986 | Dev Accuracy: 0.9184 | Test Accuracy: 0.9194
+Epoch Loop:  50%|█████████████████████████████████████████▌                                         | 10/20 [44:12<44:45, 268.56s/it]Sucessful epoch: 10 20
+Epoch 10/20 | Avg loss: 0.0290 | Train Accuracy: 0.9932 | Dev Accuracy: 0.8876 | Test Accuracy: 0.8978
+Epoch Loop:  55%|█████████████████████████████████████████████▋                                     | 11/20 [49:01<41:13, 274.79s/it]Sucessful epoch: 11 20
+Epoch 11/20 | Avg loss: 0.0230 | Train Accuracy: 0.9996 | Dev Accuracy: 0.9268 | Test Accuracy: 0.9260
+Epoch Loop:  60%|█████████████████████████████████████████████████▊                                 | 12/20 [53:24<36:09, 271.17s/it]Sucessful epoch: 12 20
+Epoch 12/20 | Avg loss: 0.0156 | Train Accuracy: 0.9996 | Dev Accuracy: 0.9284 | Test Accuracy: 0.9274
+Epoch Loop:  65%|█████████████████████████████████████████████████████▉                             | 13/20 [57:47<31:21, 268.76s/it]Sucessful epoch: 13 20
+Epoch 13/20 | Avg loss: 0.0099 | Train Accuracy: 0.9992 | Dev Accuracy: 0.9178 | Test Accuracy: 0.9188
+Epoch Loop:  70%|████████████████████████████████████████████████████████▋                        | 14/20 [1:02:10<26:41, 266.98s/it]Sucessful epoch: 14 20
+Epoch 14/20 | Avg loss: 0.0172 | Train Accuracy: 0.9992 | Dev Accuracy: 0.9268 | Test Accuracy: 0.9250
+Epoch Loop:  75%|████████████████████████████████████████████████████████████▊                    | 15/20 [1:06:33<22:08, 265.74s/it]Sucessful epoch: 15 20
+Epoch 15/20 | Avg loss: 0.0181 | Train Accuracy: 0.9994 | Dev Accuracy: 0.9170 | Test Accuracy: 0.9186
+Epoch Loop:  80%|████████████████████████████████████████████████████████████████▊                | 16/20 [1:10:56<17:39, 264.88s/it]Sucessful epoch: 16 20
+Epoch 16/20 | Avg loss: 0.0202 | Train Accuracy: 0.9998 | Dev Accuracy: 0.9184 | Test Accuracy: 0.9158
+Epoch Loop:  85%|████████████████████████████████████████████████████████████████████▊            | 17/20 [1:15:19<13:13, 264.38s/it]Sucessful epoch: 17 20
+Epoch 17/20 | Avg loss: 0.0177 | Train Accuracy: 0.9998 | Dev Accuracy: 0.9234 | Test Accuracy: 0.9268
+Epoch Loop:  90%|████████████████████████████████████████████████████████████████████████▉        | 18/20 [1:19:42<08:47, 263.92s/it]Sucessful epoch: 18 20
+Epoch 18/20 | Avg loss: 0.0102 | Train Accuracy: 0.9992 | Dev Accuracy: 0.9272 | Test Accuracy: 0.9248
+Epoch Loop:  95%|████████████████████████████████████████████████████████████████████████████▉    | 19/20 [1:24:05<04:23, 263.67s/it]Sucessful epoch: 19 20
+Epoch 19/20 | Avg loss: 0.0111 | Train Accuracy: 0.9998 | Dev Accuracy: 0.9280 | Test Accuracy: 0.9286
+Epoch Loop: 100%|█████████████████████████████████████████████████████████████████████████████████| 20/20 [1:28:28<00:00, 263.50s/it]Epoch Loop: 100%|█████████████████████████████████████████████████████████████████████████████████| 20/20 [1:28:28<00:00, 265.43s/it]
+Ending: 07/08/25 17:36:35
